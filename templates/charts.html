@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <title>AdminLTE 3 | Dashboard 3</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="../static/plugins/fontawesome-free/css/all.min.css">
+  <!-- IonIcons -->
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../static/dist/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <!-- jQuery -->
+  <script src="../static/plugins/jquery/jquery.min.js"></script>
+
+</head>
+<!--
+BODY TAG OPTIONS:
+=================
+Apply one or more of the following classes to to the body tag
+to get the desired effect
+|---------------------------------------------------------|
+|LAYOUT OPTIONS | sidebar-collapse                        |
+|               | sidebar-mini                            |
+|---------------------------------------------------------|
+-->
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="index.html" class="nav-link">Home</a>
+      </li>
+    </ul>
+
+    <!-- SEARCH FORM -->
+    <form class="form-inline ml-3">
+      <div class="input-group input-group-sm">
+        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+        <div class="input-group-append">
+          <button class="btn btn-navbar" type="submit">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+    </form>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="index3.html" class="brand-link">
+      <img src="../static/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+           style="opacity: .8">
+      <span class="brand-text font-weight-light">MoniCam</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="../static/dist/img/displaypic.png" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">nerd</a>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <li class="nav-item">
+            <a href="./index.html" class="nav-link">
+              <i class="nav-icon fas fa-home"></i>
+              <p>
+                Home
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="./charts.html" class="nav-link active">
+              <i class="nav-icon fas fa-chart-line"></i>
+              <p>
+                Charts
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="forms.html" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>
+                Forms
+              </p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0 text-dark">Charts</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Charts</a></li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <div class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-header border-0">
+                <div class="d-flex justify-content-between">
+                  <h3 class="card-title">Number of motion detected on date basis</h3>
+                </div>
+              </div>
+              <div class="card-body">
+                <!-- INSERT GRAPH DETAILS HERE !!!! -->
+                <div id="motion_chart_div">
+
+                </div>
+              </div>
+            </div>
+            <!-- /.card -->
+
+            <div class="card">
+              <div class="card-header border-0">
+                <h3 class="card-title">All time motion detected table</h3>
+              </div>
+              <div class="card-body">
+                <!-- INSERT TABLE DETAILS HERE !!!! -->
+                <div id="motion_table_div" style="height: 500px;">
+
+                </div>
+              </div>
+              <div class="card-body table-responsive p-0">
+                <table class="table table-striped table-valign-middle">
+                </table>
+              </div>
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col-md-6 -->
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-header border-0">
+                <div class="d-flex justify-content-between">
+                  <h3 class="card-title">Number of attempts on date basis</h3>
+                </div>
+              </div>
+              <div class="card-body">
+                <!-- INSERT GRAPH DETAILS HERE !!!! -->
+                <div id="attempt_chart_div">
+
+                </div>
+              </div>
+            </div>
+
+            <!-- /.card -->
+
+            <div class="card">
+              <div class="card-header border-0">
+                <h3 class="card-title">All time attempts table</h3>
+              </div>
+              <div class="card-body">
+                <!-- INSERT TABLE DETAILS HERE !!!! -->
+                <div id="attempt_table_div" style="height: 500px;">
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.col-md-6 -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </div>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 3.0.1
+    </div>
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+
+<!-- jQuery -->
+<script src="../static/plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="../static/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE -->
+<script src="../static/dist/js/adminlte.js"></script>
+
+<!-- OPTIONAL SCRIPTS -->
+<script src="../static/plugins/chart.js/Chart.min.js"></script>
+<script src="../static/dist/js/demo.js"></script>
+<script src="../static/dist/js/pages/dashboard3.js"></script>
+
+<!-- javascripts -->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript">
+  // Load Charts, Table and the corechart package.
+ google.charts.load('current', {'packages':['corechart','table', 'bar']});
+ google.charts.setOnLoadCallback(drawMotionGraph);
+ google.charts.setOnLoadCallback(drawMotionTable);
+ google.charts.setOnLoadCallback(drawAttemptGraph);
+ google.charts.setOnLoadCallback(drawAttemptTable);
+ // google.charts.setOnLoadCallback(drawAttemptBar);
+
+ function groupBy(elements, duration) {
+  const formatted = elements.map(elem => {
+    return { date: moment(elem.date).startOf(duration).format('YYYY-MM-DD'), count: elem.count }
+  })
+
+  const dates = formatted.map(elem => elem.date)
+  const uniqueDates = dates.filter((date, index) => dates.indexOf(date) === index)
+
+  return uniqueDates.map(date => {
+    const count = formatted.filter(elem => elem.date === date).reduce((count, elem) => count + elem.count, 0)
+    return { date, count }
+  })
+}
+
+ //==================================================================//
+ // start of all time motion graph
+
+ // function to retrieve data for all time motion graph
+ function drawMotionGraph(){
+      jQuery.ajax({
+          url: "/api/get_alltime_motion_graph_data" ,
+          type: 'GET',
+          success: function(ndata, textStatus, xhr){
+              console.log(ndata)
+              var chartdata = ndata.chart_data
+              drawMotionLineChart(chartdata)
+            }//end success
+      });//end ajax
+ }
+
+ //draw the all time motion line chart
+ function drawMotionLineChart(graphdata){
+    var chart = new google.visualization.LineChart(
+    document.getElementById('motion_chart_div'));
+    var motion_chart = new google.visualization.DataTable();
+    motion_chart.addColumn('string', 'Motion Date');
+    motion_chart.addColumn('number', 'Number of Motion Sensed');
+    var graphdata = JSON.parse(graphdata);
+    console.log('graphdata')
+    console.log(graphdata)
+
+    for (i=0;i<graphdata.length;i++){
+        date = graphdata[i].date;
+        number_of_motion = graphdata[i].motion;
+        motion_chart.addRows([[date,number_of_motion]]);
+    }//end for
+    chart.draw(motion_chart, {legend: 'none', vAxis: {baseline: 0},
+        colors: ['#A0D100']});
+ }
+ // end of all time motion graph
+ //====================================================================//
+
+ //====================================================================//
+ // start of all time motion table
+
+ // function to retrieve data for all time motion table
+ function drawMotionTable(){
+      jQuery.ajax({
+          url: "/api/get_alltime_motion_table_data" ,
+          type: 'GET',
+          success: function(ndata, textStatus, xhr){
+              console.log(ndata)
+              var chartdata = ndata.chart_data
+              createMotionDataTable(chartdata)
+            }//end success
+      });//end ajax
+ }
+
+ // draw the all time motion table
+ function createMotionDataTable(newdata){
+    var motion_table = new google.visualization.DataTable();
+    motion_table.addColumn('number', 'Light Value');
+    motion_table.addColumn('string', 'Motion Datetime');
+    motion_table.addColumn('string', 'Motion Image');
+    var newdata = JSON.parse(newdata);
+
+    for (i=0;i<newdata.length;i++){
+        lightvalue = parseInt(newdata[i].lightvalue);
+        motion_datetime = newdata[i].motion_datetime;
+        motion_image = newdata[i].motion_image;
+        motion_table.addRows([[lightvalue,motion_datetime,motion_image]]);
+    }//end for
+    //draw the motion table
+    var table = new google.visualization.Table(document.getElementById('motion_table_div'));
+    table.draw(motion_table, {showRowNumber: true, width: '100%', height: '100%'});
+ }
+ // end of all time motion table
+ //====================================================================//
+
+//##############################################################################
+
+//=====================================================================//
+// start of all time attempt graph
+
+// function to retrieve data for all time attempt graph
+function drawAttemptGraph(){
+     jQuery.ajax({
+         url: "/api/get_alltime_attempt_graph_data" ,
+         type: 'GET',
+         success: function(ndata, textStatus, xhr){
+             console.log(ndata);
+             var chartdata = ndata.chart_data;
+             drawAttemptLineChart(chartdata);
+           }//end success
+     });//end ajax
+}
+
+//draw the attmept line chart
+function drawAttemptLineChart(newdata){
+
+   var chart = new google.visualization.LineChart(
+   document.getElementById('attempt_chart_div'));
+   var attempt_chart = new google.visualization.DataTable();
+   attempt_chart.addColumn('string', 'Attempt Datetime');
+   attempt_chart.addColumn('number', 'Number of attempts');
+
+   var newdata = JSON.parse(newdata);
+
+   for (i=0;i<newdata.length;i++){
+       attempt_datetime = newdata[i].date;
+       number_of_attempts = newdata[i].attempt;
+       attempt_chart.addRows([[attempt_datetime, number_of_attempts]]);
+   }//end for
+
+   chart.draw(attempt_chart, {legend: 'none', vAxis: {baseline: 0},
+       colors: ['#A0D100']});
+}
+
+// end of all time attempt graph
+//====================================================================//
+
+//====================================================================//
+//start of all time attempt table
+
+// function to retrieve data for all time attmept table
+function drawAttemptTable(){
+     jQuery.ajax({
+         url: "/api/get_alltime_attempt_table_data" ,
+         type: 'GET',
+         success: function(ndata, textStatus, xhr){
+             console.log(ndata);
+             $("#status").html("Data fetched! Now plotting graph!");
+             var chartdata = ndata.chart_data;
+             createAttemptDataTable(chartdata);
+           }//end success
+     });//end ajax
+}
+
+function createAttemptDataTable(newdata){
+  var attempt_table = new google.visualization.DataTable();
+  attempt_table.addColumn('string', 'Attempt ID');
+  attempt_table.addColumn('string', 'Date and time of attempt');
+  attempt_table.addColumn('string', 'RFID ID');
+  attempt_table.addColumn('string', 'Username (if any)');
+  attempt_table.addColumn('string', 'Attempt success');
+  attempt_table.addColumn('string', 'Attempt Image');
+
+  var newdata = JSON.parse(newdata);
+
+  for (i=0;i<newdata.length;i++){
+    id = newdata[i].id;
+    datetime = newdata[i].attempt_datetime;
+    rfidId = newdata[i].rfid_id;
+    uname = newdata[i].username;
+    yn_success = newdata[i].success;
+    attempt_img = newdata[i].attempt_img_path;
+    attempt_table.addRows([[id, datetime, rfidId, uname, yn_success, attempt_img]]);
+  }//end for
+  //draw the motion table
+  var table = new google.visualization.Table(document.getElementById('attempt_table_div'));
+  table.draw(attempt_table, {showRowNumber: true, width: '100%', height: '100%'});
+}
+</script>
+
+</body>
+</html>
