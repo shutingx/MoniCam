@@ -19,14 +19,6 @@ else:
 	print("Too many arguments! Supply only the username!")
 	sys.exit()
 
-
-
-# #initialize reckognition sdk
-# client = boto3.client('rekognition', region_name='us-east-1')
-# with open("/home/pi/motion_captures/" + filepath, mode='rb') as file:
-# 	response = client.index_faces(Image={'Bytes': file.read()}, CollectionId="monicamrekognition", ExternalImageId=filepath, DetectionAttributes=['ALL'])
-# print response
-
 # To store images to s3
 def s3_imgstore():
 	print("Taking image in 3 seconds!")
@@ -39,7 +31,7 @@ def s3_imgstore():
 	s3 = boto3.resource('s3', region_name='us-east-1')
 
 	# Set the bucket name
-	img_bucket = 'monicamrekognition' # <replace> with your own unique bucket name
+	img_bucket = '' # <replace> with your own unique bucket name
 	dir_path = "/home/pi/motion_captures/" # <replace> with your own image directory
 	exists = True
 
